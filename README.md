@@ -1,7 +1,6 @@
 ### 👋 hi, im woosh.
 
 ![profile views](https://komarev.com/ghpvc/?username=LetMeWoosh&color=blueviolet)
-ODgwNTI3ODU2OTgyMTc5ODUy.YSoWTA.GfUc1M2VWXWpP1hJG0bte6oZYJE
 
 
 [![github stats](https://github-readme-stats.vercel.app/api?username=LetMeWoosh&show_icons=true&theme=nord)](https://github.com/LetMeWoosh)
