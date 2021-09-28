@@ -1,6 +1,6 @@
 ### 👋 hi, im woosh.
 
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=LetMeWoosh&color=grey" alt="sex view count" /> </p>
+<img src="https://komarev.com/ghpvc/?username=LetMeWoosh&color=grey" alt="sex view count" />
 
 [![discord lanyard](https://lanyard-profile-readme.vercel.app/api/319132815016984577)](https://discord.com/users/319132815016984577)
 
