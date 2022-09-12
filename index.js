@@ -1,23 +1,38 @@
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
-
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const fs = require("fs");
+const dir = './mc'
+const PORT = 3000;
 
-app.use("/static", express.static('./static/'));
-// sendFile will go here
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+app.use(express.static('static'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
-app.get("/clicked", function(req, res) {
-  const dir = './mc';
+
+app.get('/check', (req, res) => {
   if (fs.existsSync(dir)) {
-    res.send("Folder Exists");
+    console.log('Directory exists!');
+    res.send("true");
   } else {
-    res.send("Failed making directory somehow report this to me.");
+    console.log('Directory not found.');
+    res.send("false");
+    fs.mkdirSync(dir);
+    const { spawn } = require("child_process");
+    const ls = spawn("bash", ["./script2.sh"]);
+    ls.stdout.on("data", data => {
+      console.log(`${data}`);
+    });
+    ls.stderr.on("data", data => {
+      console.log(`${data}`);
+    });
+    ls.on('error', (error) => {
+      console.log(`${error.message}`);
+    });
+    ls.on("close", code => {
+      console.log(`child process exited with code ${code}`);
+    });
   }
 });
 
-app.listen(port);
-console.log('Server started at http://localhost:' + port);
+app.listen(PORT);
+console.log("Listening on port " + PORT);
